@@ -1,7 +1,7 @@
 function boss(now, bt, FX, FY, bump) {
   hub.glint = [FX * cs, FY * cs];
   const BC = bmc(now),
-    r = rays[rays.length - 1],
+    r = run.rays[run.rays.length - 1],
     hu = now - run.hubT,
     hw = hu >= 0 && hu < 1.1 ? (0.5 + 0.5 * Math.cos((PI * hu) / 1.1)) * run.hubQ : 0,
     hit = Math.max(r ? Math.max(0, 1 - (now - r.t) / 0.35) : 0, hw),
@@ -55,7 +55,7 @@ function boss(now, bt, FX, FY, bump) {
     hit > 0.15 ? lcf(1) : BC || 3,
     bt * 0.04,
     (i, n) => (i % 6 < 3 ? 0.5 : 0),
-    BC ? BI + 1 : 0
+    BC ? run.bi + 1 : 0
   );
   sring(
     FX,
@@ -65,7 +65,7 @@ function boss(now, bt, FX, FY, bump) {
     hit > 0.15 ? lcf(0) : BC || 6,
     -bt * 0.05,
     (i, n) => (i % 8 < 3 ? 0.4 : 0),
-    BC ? BI + 1 : 0
+    BC ? run.bi + 1 : 0
   );
   if (hu >= 0 && hu < 1.1) {
     const u = hu / 1.1;
@@ -82,7 +82,7 @@ function boss(now, bt, FX, FY, bump) {
           run.hubK < 3 ? [BC, lcf(0), lcf(0)][n] : BC,
           0,
           null,
-          BC ? BI + 1 : 0
+          BC ? run.bi + 1 : 0
         );
     }
   }
@@ -164,7 +164,7 @@ function boss(now, bt, FX, FY, bump) {
           }
         }
     } else {
-      const hs = BC ? BI + 1 : 0;
+      const hs = BC ? run.bi + 1 : 0;
       dsw(FX, FY, R * 0.62, 1, BC, 0, hs);
       dsw(FX, FY, R * 0.5, 1, BC || 3, 1, hs);
       dsw(FX, FY, R * 0.22, 1, 0, 0, hs);

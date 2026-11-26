@@ -48,7 +48,7 @@ function start() {
   run.total = 0;
   run.df = [];
   run.pt = [];
-  bm = [];
+  run.bm = [];
   run.msg = '';
   run.state = 'play';
   ov.style.display = 'none';

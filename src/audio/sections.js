@@ -1,8 +1,6 @@
 /* ---- SECTION CHANGES: finds where the arrangement shifts (instrument enters, bass drops out...) ---- */
 const UPC = [11, 12, 13],
   DNC = [14, 15, 16];
-let BI = -1,
-  BU = true;
 const LEAD = 4.15;
 function sring(cx, cy, r, v, c, ph, fn, sh) {
   if (!sh) return ring(cx, cy, r, v, c, ph, fn || undefined);

@@ -55,7 +55,7 @@ docs/                 glyph sheet (png + svg)
 - **Live game state is the `run` object** (`src/core/config.js`): `run.state`, `run.hp`, `run.score`,
   `run.combo`, `run.chart`, `run.ac` and so on. It also holds the menu, track and pause state:
   `run.paused`, `run.theme`, `run.hard`, `run.busy`, `run.tr` (loaded track), `run.act` (track being
-  played), `run.trSrc`, `run.himg`, `run.offTuned`. Files read and write it directly. A loose global
+  played), `run.trSrc`, `run.himg`, `run.offTuned`. The effect lists are there too (`run.bm`, `run.ip`, `run.rays`, `run.tq`), as are `run.msz` (message size) and `run.bi` (current section step). Files read and write it directly. A loose global
   cannot be reassigned from another ES module; a property can, which is why it lives there.
 - **Per-frame camera and impact values are the `cam` object** (`src/core/state.js`): `cam.x/y`, the springs `cam.kv/ky` and `cam.zv/zs`, `cam.boost`, `cam.flash`, `cam.sz`, `cam.LS`, `cam.RA`, `cam.lk`. Same reason as `run`: another file can change a property, not a loose global.
 - **Background drift is the `bg` object** (`src/gameplay/impact.js`): `bg.x/y` (layer offset), the random-walk state `bg.px/py/vx/vy/tx/ty/t`, and `bg.focus`, the `[x, y]` point the scene is drawn from (`fp()` returns it).
@@ -67,6 +67,10 @@ docs/                 glyph sheet (png + svg)
   (`localStorage`). `SYNC +/-` in the pause menu and `[` / `]` adjust it by hand.
 - **Touch keys** can be hidden (menu and pause menu). Hidden keys are invisible but still tappable.
 - **Saved settings** (`localStorage`): `amTheme3`, `amFilt2`, `amTint`, `amOff`, `amKeysHidden`.
+
+## Licence
+
+Not chosen yet. Add a `LICENSE` file before publishing. See `CREDITS.md` for third-party items.
 
 ## Licence
 

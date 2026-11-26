@@ -3,8 +3,8 @@ var hA = -0.55,
 function hands(now, bt, gl, bump) {
   const s = gl * 0.55;
   let e = 0;
-  for (let i = rays.length - 1; i >= 0; i--) {
-    const r = rays[i],
+  for (let i = run.rays.length - 1; i >= 0; i--) {
+    const r = run.rays[i],
       a = now - r.t;
     if (a > 0.4) break;
     e = Math.sin(PI * Math.min(1, a / 0.4));
@@ -100,8 +100,8 @@ function handsOld(now, bt, gl, bump) {
     let e = 0,
       ext = ID,
       kk = -1;
-    for (let i = rays.length - 1; i >= 0; i--) {
-      const r = rays[i],
+    for (let i = run.rays.length - 1; i >= 0; i--) {
+      const r = run.rays[i],
         a = now - r.t;
       if (a > 0.4) break;
       if (r.k === 1 || r.k === 3 || r.k === (m < 0 ? 0 : 2)) {

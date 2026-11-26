@@ -76,7 +76,7 @@ function cast(k, ts) {
       PYf(k < 3 ? LOf(k) : 0, 1)
     );
   }
-  msz = k === 3 ? (pf ? 36 : 30) : 24;
+  run.msz = k === 3 ? (pf ? 36 : 30) : 24;
   run.inv = k === 3 ? 0.3 : pf ? 0.35 : 0.15;
   run.fc = KC[k];
   run.shake = k === 3 ? 0 : pf ? 0.5 : 0.3;

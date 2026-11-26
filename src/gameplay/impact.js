@@ -62,11 +62,11 @@ function impact(k, q, now, x, y) {
   cam.kv += sp ? 0.45 : 1.1 * s;
   cam.zv += sp ? 0.3 : 0.6 * s;
   cam.flash = Math.max(cam.flash, sp ? 0.25 : 0.2 * s);
-  ip.push({ k, q: s, t: now, x, y, sp });
-  rays.push({ t: now, k });
+  run.ip.push({ k, q: s, t: now, x, y, sp });
+  run.rays.push({ t: now, k });
   if (sp) cam.boost = 1;
-  if (rays.length > 8) rays.shift();
-  if (ip.length > 8) ip.shift();
+  if (run.rays.length > 8) run.rays.shift();
+  if (run.ip.length > 8) run.ip.shift();
   spark(x, y, 9, sp ? 50 : 22, sp ? 2 : 1.3);
   spark(x, y, 10, sp ? 36 : 14, sp ? 2.8 : 1.8);
   if (sp) spark(x, y, 0, 70, 2.2);

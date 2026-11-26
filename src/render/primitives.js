@@ -34,7 +34,7 @@ function rect(x0, y0, x1, y1, v, c) {
   for (let y = Math.round(y0); y <= y1; y++)
     for (let x = Math.round(x0); x <= x1; x++) dot(x, y, v, c);
 }
-const txt = (s, x, y, c, sz = 14, al = 'center') => TQ.push([s, x, y, c, sz, al]);
+const txt = (s, x, y, c, sz = 14, al = 'center') => run.tq.push([s, x, y, c, sz, al]);
 function hand(x, y, n, v, c, m) {
   if (n == 0) rect(x - 3, y - 2, x + 3, y + 4, v, c);
   else {

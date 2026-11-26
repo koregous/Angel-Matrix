@@ -30,8 +30,7 @@ let W,
   gh2 = 0,
   FB,
   FCl,
-  bgc,
-  TQ = [];
+  bgc;
 function rs() {
   if (!innerWidth || !innerHeight) return;
   DPR = Math.min(2, devicePixelRatio || 1);

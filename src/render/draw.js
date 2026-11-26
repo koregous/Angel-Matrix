@@ -1,5 +1,5 @@
 function draw(now, bt) {
-  TQ = [];
+  run.tq = [];
   FB.fill(0);
   const [fx, fy] = fp(),
     [tx, ty] = tp(),
@@ -93,9 +93,9 @@ function draw(now, bt) {
       q = Math.pow(a0, 2.6);
   }
 
-  bm = bm.filter((b) => now - b.t < 0.8);
+  run.bm = run.bm.filter((b) => now - b.t < 0.8);
   const bc = bmc(now);
-  for (const b of bm) {
+  for (const b of run.bm) {
     const age = now - b.t,
       fade = Math.max(0, 1 - age / 0.8),
       land = Math.min(1, age / 0.2),
@@ -263,8 +263,8 @@ function draw(now, bt) {
           );
       }
     }
-    rays = rays.filter((r) => now - r.t < 0.4);
-    for (const r of rays) {
+    run.rays = run.rays.filter((r) => now - r.t < 0.4);
+    for (const r of run.rays) {
       const a = now - r.t,
         f = 1 - a / 0.4,
         e = Math.min(1, a / 0.06),
@@ -313,9 +313,9 @@ function draw(now, bt) {
       );
     }
   }
-  ip = ip.filter((o) => now - o.t < (o.sp ? 1.5 : 1.1));
+  run.ip = run.ip.filter((o) => now - o.t < (o.sp ? 1.5 : 1.1));
   edgeWave(now);
-  for (const o of ip) {
+  for (const o of run.ip) {
     const a = now - o.t,
       life = o.sp ? 1.5 : 1.1,
       f = 0.5 + 0.5 * Math.cos(PI * Math.min(1, a / life)),
@@ -413,7 +413,7 @@ function draw(now, bt) {
     txt(String(Math.round(run.score)).padStart(7, '0'), W - 12, SAT + 26, 0, 18, 'right');
     if (run.combo > 1) txt(run.combo + ' COMBO', W / 2, SAT + 110, 0, 22);
     const ma = 1 - (now - run.mt) / 0.6;
-    if (run.msg && ma > 0) txt(run.msg, W / 2, SAT + 80, run.mc, msz);
+    if (run.msg && ma > 0) txt(run.msg, W / 2, SAT + 80, run.mc, run.msz);
   } else txt('--- ANGEL MATRIX ---', W / 2, H * 0.93, 5, 13);
   {
     const gr = g.createRadialGradient(fx, fy, 0, fx, fy, Math.max(W, H) * 0.8);
@@ -513,7 +513,7 @@ function draw(now, bt) {
   g.rotate(-cam.RA);
   g.translate(-W / 2, -bg.focus[1]);
   g.textBaseline = 'middle';
-  for (const [s, x, y, c, sz, al] of TQ) {
+  for (const [s, x, y, c, sz, al] of run.tq) {
     g.font = Math.max(8, Math.round(sz * 0.7)) + 'px "Press Start 2P","Courier New",monospace';
     g.textAlign = al;
     g.fillStyle = PAL[c];

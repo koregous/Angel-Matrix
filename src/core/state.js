@@ -10,9 +10,5 @@ const cam = {
   RA: 0, // roll angle
   lk: 0, // lean
 };
-var rays = [],
-  ROLL = 0.05,
-  bm = [],
-  ip = [],
-  msz = 24;
+var ROLL = 0.05;
 //<TRACK>

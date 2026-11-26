@@ -1,6 +1,6 @@
 const BRL = [11, 6, 14];
 function edgeWave(now) {
-  if (!ip.length) return;
+  if (!run.ip.length) return;
   const m = 2,
     x0 = m,
     x1 = gw - 1 - m,
@@ -16,7 +16,7 @@ function edgeWave(now) {
   for (let x = x0 + st; x < mx; x += st) P.push([x, y1, 0, -1]);
   const N = P.length,
     ml = Math.max(4, Math.min(gw, gh2) * 0.09);
-  for (const o of ip) {
+  for (const o of run.ip) {
     const a = now - o.t,
       life = o.sp ? 1.5 : 1.1;
     if (a < 0 || a > life) continue;

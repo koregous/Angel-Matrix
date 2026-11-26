@@ -8,7 +8,7 @@ function frame() {
     for (const w of run.chart) {
       if (!w.sp && bt >= w.b - w.lead) {
         w.sp = 1;
-        bm.push({ k: w.k, t: now });
+        run.bm.push({ k: w.k, t: now });
         if (w.k == 3) run.pulse = 1;
       }
       if (!w.sp || w.d) continue;

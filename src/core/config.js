@@ -58,6 +58,7 @@ const run = {
   msg: '',
   mc: 0,
   mt: 0,
+  msz: 24, // size of the message text
   // effects
   shake: 0,
   inv: 0,
@@ -67,6 +68,11 @@ const run = {
   rl: 0,
   df: [],
   pt: [],
+  bm: [], // recent note spawns, { k, t }, drawn as short-lived effects
+  ip: [], // recent hit impacts
+  rays: [], // recent shockwave rays
+  tq: [], // text queued during a frame, drawn at the end of draw()
+  bi: -1, // current section step (0-2), -1 when not in a section; set by bmc()
   hubT: -99,
   hubK: 3,
   hubQ: 0,
