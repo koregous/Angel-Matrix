@@ -1,0 +1,14 @@
+{
+  "name": "angel-matrix",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "description": "A dot-matrix space rhythm game with an angelcore feel. Plain HTML, CSS and JS - no build step.",
+  "scripts": {
+    "start": "python3 -m http.server 8080",
+    "format": "prettier --write \"src/**/*.js\" \"css/*.css\" \"tools/*.js\" \"tests/*.js\"",
+    "test": "node tests/glyphs.test.js",
+    "export:glyphs": "node tools/export-glyphs.js"
+  },
+  "devDependencies": { "prettier": "^3" }
+}

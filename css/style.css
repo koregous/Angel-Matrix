@@ -1,0 +1,202 @@
+:root {
+  color-scheme: dark;
+  --bg: #000;
+  --fg: #fff;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Press Start 2P', 'Courier New', ui-monospace, monospace;
+  -webkit-font-smoothing: none;
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior: none;
+  touch-action: none;
+}
+canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+#ov,
+#pz {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: safe center;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.92);
+  padding: 24px 20px;
+  gap: 14px;
+  overflow-y: auto;
+  touch-action: pan-y;
+  box-sizing: border-box;
+}
+#ov.fin {
+  background: rgba(0, 0, 0, 0.2);
+  justify-content: flex-start;
+  padding-top: 9vh;
+}
+#ov h1,
+#pz h1 {
+  font-size: clamp(16px, 4.2vw, 36px);
+  line-height: 1.4;
+  letter-spacing: 0.1em;
+  margin: 0;
+  font-weight: 700;
+}
+#ov p {
+  max-width: 680px;
+  line-height: 2;
+  margin: 0;
+  color: #ccc;
+  font-size: 10px;
+}
+button {
+  touch-action: manipulation;
+  min-height: 44px;
+  font: inherit;
+  font-size: 10px;
+  color: #fff;
+  background: #050505;
+  border: 2px solid #555;
+  border-radius: 0;
+  padding: 12px 18px;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+}
+.row {
+  display: flex;
+  gap: 8px;
+}
+.row button.on,
+#go:hover {
+  background: #fff;
+  color: #000;
+}
+#go {
+  padding: 14px 26px;
+  letter-spacing: 0.1em;
+}
+#pz {
+  display: none;
+  background: rgba(0, 0, 0, 0.82);
+}
+#rs {
+  padding: 18px 36px;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+#mb {
+  position: fixed;
+  top: calc(env(safe-area-inset-top, 0px) + 62px);
+  right: 10px;
+  display: none;
+  font-size: 9px;
+  padding: 10px 12px;
+  letter-spacing: 0.06em;
+  background: rgba(0, 0, 0, 0.7);
+  border-color: #444;
+}
+#st,
+#pst {
+  min-height: 1.3em;
+  font-size: 9px;
+  color: #aaa;
+  letter-spacing: 0.04em;
+}
+#ld {
+  padding: 18px 36px;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+#ld.sec {
+  padding: 12px 18px;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  background: #050505;
+  color: #fff;
+  border-color: #555;
+}
+button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+#keys {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 8px);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 0 10px;
+}
+#keys button {
+  height: clamp(72px, 14vh, 110px);
+  padding: 0;
+  font-size: 20px;
+  letter-spacing: 0;
+  background: rgba(0, 0, 0, 0.45);
+  border-color: #666;
+  touch-action: none;
+}
+#keys button:active {
+  background: #fff;
+  color: #000;
+}
+#keys button.tap {
+  grid-column: 1/-1;
+  height: clamp(52px, 9vh, 72px);
+  letter-spacing: 0.1em;
+  font-size: 12px;
+}
+@media (max-height: 500px) {
+  #keys button {
+    height: 52px;
+  }
+  #keys button.tap {
+    height: 40px;
+  }
+}
+.fr {
+  width: 100%;
+  max-width: 440px;
+  justify-content: center;
+}
+.fr button {
+  padding: 12px 10px;
+  line-height: 1.5;
+}
+.fr [data-fl],
+.fr [data-tn] {
+  flex: 1;
+}
+.fr [data-f] {
+  min-width: 44px;
+  padding: 12px 0;
+}
+
+/* TOUCH KEYS: HIDDEN = invisible but still tappable */
+body.keys-hidden #keys button {
+  opacity: 0;
+}

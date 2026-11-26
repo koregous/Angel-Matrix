@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="theme-color" content="#000000">
+<title>ANGEL MATRIX // Mobile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head><body>
+<canvas id="c"></canvas>
+<div id="keys"></div>
+<button id="mb">II MENU</button>
+<div id="ov"><h1 id="t">[ ANGEL MATRIX ]</h1><p id="b">Load an MP3 to start.<br>Tap <b>A</b> <b>S</b> <b>D</b> when a note reaches the line.<br>Tap <b>SPACE</b> for wide bars.</p>
+<button id="ld">LOAD MP3</button><div id="st"></div>
+<button id="df">DIFFICULTY: NORMAL</button>
+<button id="hi">HUB IMAGE</button><button id="th">THEME: NIGHTDRIVE</button><div class="row fr"><button data-f="-1">&lt;</button><button data-fl></button><button data-f="1">&gt;</button></div><div class="row fr"><button data-tn></button></div><div class="row fr"><button data-tk></button></div><input type="file" id="fh" accept="image/*" hidden>
+<button id="go" style="display:none">START</button>
+<input type="file" id="fi" accept="audio/*,.mp3" hidden></div>
+<div id="pz"><h1>[ PAUSED ]</h1><button id="rs">RESUME</button><button id="pr">RESTART</button><button id="pc">CHANGE MP3</button><button id="pq">QUIT TO MENU</button><div class="row fr"><button data-f="-1">&lt;</button><button data-fl></button><button data-f="1">&gt;</button></div><div class="row fr"><button data-tn></button></div><div class="row fr"><button data-tk></button></div><div class="row"><button id="om">SYNC −</button><button id="op">SYNC +</button></div><div style="font-size:8px;color:#888;line-height:1.8">Hitting late? SYNC +. Early? SYNC −.</div><div id="pst"></div></div>
+<script src="src/core/globals.js"></script>
+<script src="src/render/nebula.js"></script>
+<script src="src/render/bloom.js"></script>
+<script src="src/themes/nightdrive/speed-lines.js"></script>
+<script src="src/themes/nightdrive/sky.js"></script>
+<script src="src/themes/veil/background.js"></script>
+<script src="src/themes/nightdrive/road.js"></script>
+<script src="src/render/nebula-draw.js"></script>
+<script src="src/core/config.js"></script>
+<script src="src/ui/touch-keys.js"></script>
+<script src="src/gameplay/note-factory.js"></script>
+<script src="src/audio/synth.js"></script>
+<script src="src/core/state.js"></script>
+<script src="src/audio/sections.js"></script>
+<script src="src/gameplay/build-chart.js"></script>
+<script src="src/ui/menu.js"></script>
+<script src="src/ui/pause-menu.js"></script>
+<script src="src/gameplay/session.js"></script>
+<script src="src/gameplay/impact.js"></script>
+<script src="src/gameplay/judgement.js"></script>
+<script src="src/core/input.js"></script>
+<script src="src/render/primitives.js"></script>
+<script src="src/render/glyph-shapes.js"></script>
+<script src="src/render/perspective.js"></script>
+<script src="src/render/note-position.js"></script>
+<script src="src/render/scenery.js"></script>
+<script src="src/render/shapes.js"></script>
+<script src="src/render/edge-wave.js"></script>
+<script src="src/render/note-glyph.js"></script>
+<script src="src/render/boss.js"></script>
+<script src="src/render/hub.js"></script>
+<script src="src/render/twinkles.js"></script>
+<script src="src/render/limbs.js"></script>
+<script src="src/render/hands.js"></script>
+<script src="src/render/angel.js"></script>
+<script src="src/gameplay/section-beat.js"></script>
+<script src="src/render/draw.js"></script>
+<script src="src/render/ascii-filters.js"></script>
+<script src="src/ui/texture-menu.js"></script>
+<script src="src/main.js"></script>
+<script type="module" src="src/bridge.js"></script>
+</body></html>
